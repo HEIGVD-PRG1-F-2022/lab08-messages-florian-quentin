@@ -12,12 +12,19 @@
 
 #ifndef INC_08_MESSAGES_EMAIL_H
 #define INC_08_MESSAGES_EMAIL_H
-
-#include "../BaseLecture.h"
-
-class Email : public BaseLecture
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
+class Email
 {
-    
+public:
+    Email(const std::string &file);
+    std::string lis_sujet();
+    std::string lis_date();
+    std::string lis_source();
+    std::string lis_pour();
+    std::string lis_corps();
 };
 
 

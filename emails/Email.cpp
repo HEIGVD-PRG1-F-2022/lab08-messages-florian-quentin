@@ -11,3 +11,13 @@
 //
 
 #include "Email.h"
+Email::Email(const std::string &file) {
+    std::vector<std::string> lines;
+
+    std::string line;
+    std::ifstream infile(file);
+
+    while(getline(infile, line)) {
+
+    }
+}

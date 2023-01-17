@@ -1,5 +1,5 @@
 // ================================================================================
-// File : Afficher.cpp
+// File : Toot.cpp
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz, Antoine Leresche
@@ -10,9 +10,7 @@
 // Created by Florian Duruz, Antoine Leresche on 17/01/2023.
 //
 
-#include "Afficher.h"
-
-template<typename T>
-void Afficher<T>::ajouter_element(T el) {
-    ((BaseLecture)el).lis_corps();
+#include "Toot.h"
+Toot::Toot()
+{
 }

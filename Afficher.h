@@ -14,14 +14,19 @@
 #define INC_08_MESSAGES_AFFICHER_H
 
 
+#include <typeinfo>
+#include <type_traits>
+#include <vector>
 #include <string>
-#include "BaseLecture.h"
+#include "emails/Email.h"
+#include "Toots/Toot.h"
 
 using namespace std;
 
 template<typename T>
 class Afficher
 {
+    std::vector<T> elements;
 
 public:
     Afficher();
@@ -31,5 +36,5 @@ public:
     void afficher_element(size_t el);
 };
 
-
+#include "Afficher.tpp"
 #endif//INC_08_MESSAGES_AFFICHER_H

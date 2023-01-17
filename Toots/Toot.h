@@ -1,5 +1,5 @@
 // ================================================================================
-// File : BaseLecture.h
+// File : Toot.h
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz
@@ -10,13 +10,15 @@
 // Created by Florian Duruz on 17/01/2023.
 //
 
-#ifndef INC_08_MESSAGES_BASELECTURE_H
-#define INC_08_MESSAGES_BASELECTURE_H
+#ifndef INC_08_MESSAGES_TOOT_H
+#define INC_08_MESSAGES_TOOT_H
 
 #include <string>
-class BaseLecture
+
+class Toot
 {
 public:
+    Toot();
     std::string lis_sujet();
     std::string lis_date();
     std::string lis_source();
@@ -25,4 +27,4 @@ public:
 };
 
 
-#endif//INC_08_MESSAGES_BASELECTURE_H
+#endif//INC_08_MESSAGES_TOOT_H
