@@ -18,6 +18,8 @@
 #include <vector>
 class Email
 {
+private:
+    
 public:
     Email(const std::string &file);
     std::string lis_sujet();
