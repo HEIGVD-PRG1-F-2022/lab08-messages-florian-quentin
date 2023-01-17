@@ -8,8 +8,8 @@ En plus vous devez faire une classe `Email` pour représenter les emails
 et une classe `Toot` pour représenter les toots.
 Le tout sera dirigé par la méthode `main` qui doit faire la chose suivante:
 
-1. Demander à l'utilisateur s'iel veut afficher les Toots, les Emails, ou
-s'iel veut quitter
+1. Demander à l'utilisateur s'il/elle veut afficher les Toots, les Emails, ou
+s'il/elle veut quitter
 2. Pour le média demandé, afficher la liste des messages disponibles.
 Ou quitter si tel était le choix de l'utilisateur.
 3. Demander à l'utilisateur quel message afficher au complet
