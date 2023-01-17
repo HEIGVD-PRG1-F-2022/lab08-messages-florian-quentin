@@ -3,4 +3,4 @@ project(08-Messages)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(messages main.cpp)
+add_executable(messages main.cpp Afficher.cpp Afficher.h)
