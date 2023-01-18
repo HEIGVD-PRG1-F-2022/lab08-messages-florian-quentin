@@ -13,7 +13,7 @@ const vector<string> MAIN_MENU_OPTIONS = {
 };
 
 const string LEAVE_MSG = "Leave";
-const string ERROR_MENU_ACTION_INPUT = "Sorry this action is not manage, please retry";
+const string ERROR_MENU_ACTION_INPUT = "Sorry this action is not available, please retry";
 
 void showMenu(const vector<string> &options, const string sep = "> ") {
     for (size_t i = 0; const auto &option: options) {
