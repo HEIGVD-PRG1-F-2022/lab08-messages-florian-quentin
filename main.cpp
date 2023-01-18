@@ -24,24 +24,29 @@ void showMenu(const vector<string> &options, const string sep = "> ") {
 
 void mainMenu() {
     while (true) {
-        char actionInput = '\0';
+        string actionInput;
         showMenu(MAIN_MENU_OPTIONS);
-        cin >> actionInput;
 
-        switch (actionInput) {
-            case '0': {
-                return;
+        getline(cin, actionInput);
+
+        try {
+            switch (stoi(actionInput)) {
+                case 0: {
+                    return;// Exit the menu
+                }
+                case 1: {
+                    // TODO: Show Toots
+                    break;
+                }
+                case 2: {
+                    // TODO: Show Emails
+                    break;
+                }
+                default:
+                    throw invalid_argument(ERROR_MENU_ACTION_INPUT);
             }
-            case '1': {
-                // TODO: Show Toots
-                break;
-            }
-            case '2': {
-                // TODO: Show Emails
-                break;
-            }
-            default:
-            cerr << ERROR_MENU_ACTION_INPUT << endl;
+        } catch (exception const &e) {
+            cerr << e.what() << endl;
         }
     }
 }
