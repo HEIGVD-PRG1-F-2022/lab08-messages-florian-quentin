@@ -3,12 +3,9 @@
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz
+// - Quentin Aellen
 // File created by Florian Duruz
 // ================================================================================
-
-//
-// Created by Florian Duruz on 17/01/2023.
-//
 
 #ifndef INC_08_MESSAGES_EMAIL_H
 #define INC_08_MESSAGES_EMAIL_H
@@ -16,14 +13,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
-class Email
-{
+class Email {
 private:
     std::string sujet;
     std::string date;
     std::string source;
     std::string pour;
     std::string corps;
+
 public:
     Email(const std::string &file);
     std::string lis_sujet();

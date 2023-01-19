@@ -6,10 +6,6 @@
 // File created by Florian Duruz
 // ================================================================================
 
-//
-// Created by Florian Duruz on 17/01/2023.
-//
-
 #ifndef INC_08_MESSAGES_TOOT_H
 #define INC_08_MESSAGES_TOOT_H
 

@@ -3,12 +3,9 @@
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz
+// - Quentin Aellen
 // File created by Florian Duruz
 // ================================================================================
-
-//
-// Created by Florian Duruz on 17/01/2023.
-//
 
 #ifndef INC_08_MESSAGES_AFFICHER_H
 #define INC_08_MESSAGES_AFFICHER_H
