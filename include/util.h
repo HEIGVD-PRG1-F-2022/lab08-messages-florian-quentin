@@ -1,16 +1,13 @@
 // ================================================================================
-// File : Toot.cpp
+// File : Util.h
 // Project name : LABO - 08-Messages
 // Project members :
-// - Florian Duruz, Antoine Leresche
-// File created by Florian Duruz, Antoine Leresche
+// - Florian Duruz
+// - Quentin Aellen
+// File created by Quentin Aellen
 // ================================================================================
 
-//
-// Created by Florian Duruz, Antoine Leresche on 17/01/2023.
-//
+#ifndef INC_08_MESSAGES_UTIL_H
+#define INC_08_MESSAGES_UTIL_H
 
-#include "../include/Toot.h"
-Toot::Toot()
-{
-}
+#endif//INC_08_MESSAGES_UTIL_H

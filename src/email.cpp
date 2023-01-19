@@ -2,12 +2,12 @@
 // File : Email.cpp
 // Project name : LABO - 08-Messages
 // Project members :
-// - Florian Duruz, Antoine Leresche
-// File created by Florian Duruz, Antoine Leresche
+// - Florian Duruz
+// - Quentin Aellen
+// File created by Florian Duruz
 // ================================================================================
 
-
-#include "../include/Email.h"
+#include "../include/email.h"
 using namespace std;
 
 const std::string DATE_KEY_STR = "date";
@@ -25,43 +25,31 @@ Email::Email(const std::string &file) {
     bool isBody = false;
     std::string store;
 
-    while(getline(infile, line)) {
+    while (getline(infile, line)) {
         vector<string> separation(2);
         std::size_t commaIndex = line.find(':');
-        string premierSegment =  line.substr(0, commaIndex-1);
-        string deuxiemeSegment =  line.substr(commaIndex+1);
+        string premierSegment = line.substr(0, commaIndex - 1);
+        string deuxiemeSegment = line.substr(commaIndex + 1);
 
         separation.at(0) = premierSegment;
         separation.at(1) = deuxiemeSegment;
 
 
-        if(isBody)
-        {
+        if (isBody) {
             store.append(line);
-        }
-        else
-        {
+        } else {
             store.clear();
         }
 
-        if(premierSegment == DATE_KEY_STR)
-        {
+        if (premierSegment == DATE_KEY_STR) {
 
-        }
-        else if(premierSegment == FROM_KEY_STR)
-        {
+        } else if (premierSegment == FROM_KEY_STR) {
 
-        }
-        else if(premierSegment == TO_KEY_STR)
-        {
+        } else if (premierSegment == TO_KEY_STR) {
 
-        }
-        else if(premierSegment == SUBJECT_KEY_STR)
-        {
+        } else if (premierSegment == SUBJECT_KEY_STR) {
 
-        }
-        else if(premierSegment == BODY_KEY_STR)
-        {
+        } else if (premierSegment == BODY_KEY_STR) {
             isBody = true;
             continue;
         }

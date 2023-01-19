@@ -1,10 +1,15 @@
-//
-// Fichier principal pour le labo 08 - Messages
-//
+// ================================================================================
+// File : main.cpp
+// Project name : LABO - 08-Messages
+// Project members :
+// - Florian Duruz
+// - Quentin Aellen
+// File created by Florian Duruz
+// ================================================================================
 
-#include "../include/Afficher.h"
-#include "../include/Email.h"
-#include "../include/Toot.h"
+#include "../include/afficher.h"
+#include "../include/email.h"
+#include "../include/toot.h"
 #include <iostream>
 
 const vector<string> MAIN_MENU_OPTIONS = {

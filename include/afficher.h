@@ -3,19 +3,16 @@
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz
+// - Quentin Aellen
 // File created by Florian Duruz
 // ================================================================================
-
-//
-// Created by Florian Duruz on 17/01/2023.
-//
 
 #ifndef INC_08_MESSAGES_AFFICHER_H
 #define INC_08_MESSAGES_AFFICHER_H
 
 
-#include "Email.h"
-#include "Toot.h"
+#include "email.h"
+#include "toot.h"
 #include <string>
 #include <type_traits>
 #include <typeinfo>
@@ -36,5 +33,5 @@ public:
     void afficher_element(size_t el);
 };
 
-#include "../src/Afficher.tpp"
+#include "../src/afficher.tpp"
 #endif//INC_08_MESSAGES_AFFICHER_H
