@@ -2,9 +2,9 @@
 // Fichier principal pour le labo 08 - Messages
 //
 
-#include "Afficher.h"
-#include "Toots/Toot.h"
-#include "emails/Email.h"
+#include "../include/Afficher.h"
+#include "../include/Email.h"
+#include "../include/Toot.h"
 #include <iostream>
 
 const vector<string> MAIN_MENU_OPTIONS = {

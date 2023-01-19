@@ -6,18 +6,15 @@
 // File created by Florian Duruz, Antoine Leresche
 // ================================================================================
 
-//
-// Created by Florian Duruz, Antoine Leresche on 17/01/2023.
-//
 
-#include "Email.h"
+#include "../include/Email.h"
 using namespace std;
 
-const std::string DATE = "date";
-const std::string FROM = "from";
-const std::string TO = "to";
-const std::string SUBJECT = "subject";
-const std::string BODY = "body";
+const std::string DATE_KEY_STR = "date";
+const std::string FROM_KEY_STR = "from";
+const std::string TO_KEY_STR = "to";
+const std::string SUBJECT_KEY_STR = "subject";
+const std::string BODY_KEY_STR = "body";
 
 Email::Email(const std::string &file) {
     std::vector<std::string> lines;
@@ -47,23 +44,23 @@ Email::Email(const std::string &file) {
             store.clear();
         }
 
-        if(premierSegment == DATE)
+        if(premierSegment == DATE_KEY_STR)
         {
 
         }
-        else if(premierSegment == FROM)
+        else if(premierSegment == FROM_KEY_STR)
         {
 
         }
-        else if(premierSegment == TO)
+        else if(premierSegment == TO_KEY_STR)
         {
 
         }
-        else if(premierSegment == SUBJECT)
+        else if(premierSegment == SUBJECT_KEY_STR)
         {
 
         }
-        else if(premierSegment == BODY)
+        else if(premierSegment == BODY_KEY_STR)
         {
             isBody = true;
             continue;

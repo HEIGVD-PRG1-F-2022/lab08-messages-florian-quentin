@@ -3,4 +3,4 @@ project(08-Messages)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(messages main.cpp Afficher.h emails/Email.cpp emails/Email.h Toots/Toot.cpp Toots/Toot.h)
+add_executable(messages src/main.cpp include/Afficher.h src/Email.cpp include/Email.h src/Toot.cpp include/Toot.h)

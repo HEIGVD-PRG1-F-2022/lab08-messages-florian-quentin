@@ -10,7 +10,7 @@
 // Created by Florian Duruz, Antoine Leresche on 17/01/2023.
 //
 
-#include "Afficher.h"
+#include "../include/Afficher.h"
 #include <iostream>
 
 
