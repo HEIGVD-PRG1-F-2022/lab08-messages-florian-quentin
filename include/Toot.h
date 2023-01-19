@@ -17,6 +17,12 @@
 
 class Toot
 {
+private:
+    std::string sujet;
+    std::string date;
+    std::string source;
+    std::string pour;
+    std::string corps;
 public:
     Toot();
     std::string lis_sujet();

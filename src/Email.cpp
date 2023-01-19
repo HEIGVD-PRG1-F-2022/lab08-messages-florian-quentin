@@ -67,3 +67,18 @@ Email::Email(const std::string &file) {
         }
     }
 }
+std::string Email::lis_sujet() {
+    return sujet;
+}
+std::string Email::lis_date() {
+    return date;
+}
+std::string Email::lis_source() {
+    return source;
+}
+std::string Email::lis_pour() {
+    return pour;
+}
+std::string Email::lis_corps() {
+    return corps;
+}
