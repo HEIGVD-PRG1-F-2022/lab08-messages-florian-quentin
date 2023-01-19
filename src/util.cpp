@@ -1,5 +1,5 @@
 // ================================================================================
-// File : Toot.cpp
+// File : Util.cpp
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz
@@ -7,6 +7,4 @@
 // File created by Florian Duruz
 // ================================================================================
 
-#include "../include/Toot.h"
-Toot::Toot() {
-}
+#include "../include/util.h"

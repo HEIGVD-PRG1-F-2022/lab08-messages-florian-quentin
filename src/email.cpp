@@ -7,7 +7,7 @@
 // File created by Florian Duruz
 // ================================================================================
 
-#include "../include/Email.h"
+#include "../include/email.h"
 using namespace std;
 
 const std::string DATE_KEY_STR = "date";

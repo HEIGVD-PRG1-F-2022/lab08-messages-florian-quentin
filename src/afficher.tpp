@@ -7,7 +7,7 @@
 // File created by Florian Duruz
 // ================================================================================
 
-#include "../include/Afficher.h"
+#include "../include/afficher.h"
 #include <iostream>
 
 
