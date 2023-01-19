@@ -35,15 +35,14 @@ size_t Afficher<T>::afficher_liste() {
 //
 template<typename T>
 void Afficher<T>::afficher_element(size_t el) {
+    if(el > elements.size()){
+        cout << "index trop grand, maximum: " << elements.size() <<endl;
+        return;
+    }
     T targetElement = elements.at(el);
-    if(!targetElement.lis_sujet().empty())
-        cout << "sujet: " << targetElement->lis_sujet() << endl;
-    if(!targetElement.lis_date().empty())
-        cout << "date: "<< targetElement->lis_date() << endl;
-    if(!targetElement.lis_source().empty())
-        cout << "source: " << targetElement->lis_source() << endl;
-    if(!targetElement.lis_pour().empty())
-        cout << "pour: " << targetElement->lis_pour() << endl;
-    if(!targetElement.lis_corps().empty())
-        cout << "corps: " << targetElement->lis_corps() << endl;
+    cout << "sujet: " << targetElement->lis_sujet() << endl;
+    cout << "date: "<< targetElement->lis_date() << endl;
+    cout << "source: " << targetElement->lis_source() << endl;
+    cout << "pour: " << targetElement->lis_pour() << endl;
+    cout << "corps: " << targetElement->lis_corps() << endl;
 }

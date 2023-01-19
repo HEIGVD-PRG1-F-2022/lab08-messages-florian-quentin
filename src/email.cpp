@@ -56,6 +56,7 @@ Email::Email(const std::string &file) {
     }
 }
 std::string Email::lis_sujet() {
+    
     return sujet;
 }
 std::string Email::lis_date() {
