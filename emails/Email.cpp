@@ -13,11 +13,20 @@
 #include "Email.h"
 using namespace std;
 
+const std::string DATE = "date";
+const std::string FROM = "from";
+const std::string TO = "to";
+const std::string SUBJECT = "subject";
+const std::string BODY = "body";
+
 Email::Email(const std::string &file) {
     std::vector<std::string> lines;
 
     std::string line;
     std::ifstream infile(file);
+
+    bool isBody = false;
+    std::string store;
 
     while(getline(infile, line)) {
         vector<string> separation(2);
@@ -28,25 +37,36 @@ Email::Email(const std::string &file) {
         separation.at(0) = premierSegment;
         separation.at(1) = deuxiemeSegment;
 
-        if(premierSegment == "date")
+
+        if(isBody)
+        {
+            store.append(line);
+        }
+        else
+        {
+            store.clear();
+        }
+
+        if(premierSegment == DATE)
         {
 
         }
-        else if(premierSegment == "from")
+        else if(premierSegment == FROM)
         {
 
         }
-        else if(premierSegment == "to")
+        else if(premierSegment == TO)
         {
 
         }
-        else if(premierSegment == "subject")
+        else if(premierSegment == SUBJECT)
         {
 
         }
-        else if(premierSegment == "body")
+        else if(premierSegment == BODY)
         {
-
+            isBody = true;
+            continue;
         }
     }
 }
