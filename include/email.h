@@ -13,13 +13,26 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+const std::string DATE_KEY_STR = "date";
+const std::string FROM_KEY_STR = "from";
+const std::string TO_KEY_STR = "to";
+const std::string SUBJECT_KEY_STR = "subject";
+const std::string BODY_KEY_STR = "body";
+
 class Email {
 private:
-    std::string sujet;
-    std::string date;
-    std::string source;
-    std::string pour;
-    std::string corps;
+    std::string date, from, to, subject, body;
+
+    enum class KeyIdentifier {
+        Date = 0,
+        From,
+        To,
+        Subject,
+        Body
+    };
+
+    static KeyIdentifier resolveKeyIdentifier(const std::string &key);
 
 public:
     Email(const std::string &file);
@@ -28,6 +41,7 @@ public:
     std::string lis_source();
     std::string lis_pour();
     std::string lis_corps();
+
 };
 
 

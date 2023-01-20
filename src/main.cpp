@@ -58,7 +58,7 @@ void mainMenu() {
 
 int main() {
     Afficher<Email> emails;
-    Email a("emails/email1.txt");
+    Email a("../data/emails/email1.txt");
     emails.ajouter_element(a);
 
     mainMenu();

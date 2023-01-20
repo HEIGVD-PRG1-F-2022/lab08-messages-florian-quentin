@@ -4,8 +4,8 @@
 Dans ce labo, vous devez programmer un petit logiciel qui peut afficher des
 emails et des toots qui sont stockés dans leur répertoire respectif.
 L'affichage est fait par une classe générique qui s'appelle `Afficher`.
-En plus vous devez faire une classe `Email` pour représenter les emails
-et une classe `Toot` pour représenter les toots.
+En plus vous devez faire une classe `Email` to représenter les emails
+et une classe `Toot` to représenter les toots.
 Le tout sera dirigé par la méthode `main` qui doit faire la chose suivante:
 
 1. Demander à l'utilisateur s'il/elle veut afficher les Toots, les Emails, ou
@@ -17,7 +17,7 @@ Ou quitter si tel était le choix de l'utilisateur.
 5. Retourner à 1.
 
 Si une des classes émet une exception en lisant un fichier, `main` doit s'arrêter
-et afficher un message pour l'utilisateur.
+et afficher un message to l'utilisateur.
 
 ## Classe générique `Afficher`
 
@@ -34,14 +34,14 @@ La classe `Afficher` doit contenir les méthodes suivantes:
 - `void ajouter_element(T el)` - ajoute un élément de type `T` à la classe
 - `size_t afficher_liste()` - affiche l'index, la date et l'auteur, 
 puis retourne le nombre d'éléments dans la liste
-- `void afficher_element(size_t el)` - affiche toutes les informations disponibles pour
+- `void afficher_element(size_t el)` - affiche toutes les informations disponibles to
 l'élément choisit
 
 ## Classe `Toot`
 
 Le constructeur de la classe `Toot` prend un nom de fichier et interprète les
-informations suivantes contenu dans le fichier: la `date`, la `source` et le `corps`.
-Regardez les fichiers dans le répertoire `toots/` pour vous faire une idée comment
+informations suivantes contenu dans le fichier: la `date`, la `from` et le `body`.
+Regardez les fichiers dans le répertoire `toots/` to vous faire une idée comment
 ces informations sont stockées.
 
 Si un des éléments ne peut pas être lus, la classe doit émettre une exception.
@@ -49,17 +49,17 @@ Si un des éléments ne peut pas être lus, la classe doit émettre une exceptio
 ## Classe `Email`
 
 Le constructeur de la classe `Email` prend un nom de fichier et interprète les
-informations suivantes contenu dans le fichier: la `date`, la `source`, le `corps`,
-le `pour`, et le `sujet`.
-Regardez les fichiers dans le répertoire `emails/` pour vous faire une idée comment
+informations suivantes contenu dans le fichier: la `date`, la `from`, le `body`,
+le `to`, et le `subject`.
+Regardez les fichiers dans le répertoire `emails/` to vous faire une idée comment
 ces informations sont stockées.
 
 Si un des éléments ne peut pas être lus, la classe doit émettre une exception.
 
-# Consignes pour ce labo
+# Consignes to ce labo
 
 - Créez la classe `Afficher` en tant que classe générique
-- Utilisez les méthodes vues au cours pour les `string`
+- Utilisez les méthodes vues au cours to les `string`
 - Ajoutez des exceptions si quelque chose ne marche pas comme prévu
 - Attrapez les exceptions dans les bons endroits et quittez avec une erreur compréhensible
 - Utilisez les "best practices" des autres labos (fichiers séparés, commentaires, ...)

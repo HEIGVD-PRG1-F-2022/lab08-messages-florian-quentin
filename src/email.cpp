@@ -8,13 +8,8 @@
 // ================================================================================
 
 #include "../include/email.h"
+#include "../include/util.h"
 using namespace std;
-
-const std::string DATE_KEY_STR = "date";
-const std::string FROM_KEY_STR = "from";
-const std::string TO_KEY_STR = "to";
-const std::string SUBJECT_KEY_STR = "subject";
-const std::string BODY_KEY_STR = "body";
 
 Email::Email(const std::string &file) {
     std::vector<std::string> lines;
@@ -22,52 +17,59 @@ Email::Email(const std::string &file) {
     std::string line;
     std::ifstream infile(file);
 
-    bool isBody = false;
-    std::string store;
+    string keyIdentifier, keyContent;
 
     while (getline(infile, line)) {
-        vector<string> separation(2);
-        std::size_t commaIndex = line.find(':');
-        string premierSegment = line.substr(0, commaIndex - 1);
-        string deuxiemeSegment = line.substr(commaIndex + 1);
+        vector<string> parts = split(line, ':', 2);
 
-        separation.at(0) = premierSegment;
-        separation.at(1) = deuxiemeSegment;
-
-
-        if (isBody) {
-            store.append(line);
+        if (parts.size() == 2) {
+            keyIdentifier = parts.at(0);
+            keyContent = parts.at(1);
         } else {
-            store.clear();
+            keyContent = parts.at(0);
         }
 
-        if (premierSegment == DATE_KEY_STR) {
-
-        } else if (premierSegment == FROM_KEY_STR) {
-
-        } else if (premierSegment == TO_KEY_STR) {
-
-        } else if (premierSegment == SUBJECT_KEY_STR) {
-
-        } else if (premierSegment == BODY_KEY_STR) {
-            isBody = true;
-            continue;
+        switch (resolveKeyIdentifier(keyIdentifier)) {
+            case KeyIdentifier::Date:
+                date = keyContent;
+                break;
+            case KeyIdentifier::From:
+                from = keyContent;
+                break;
+            case KeyIdentifier::To:
+                to = keyContent;
+                break;
+            case KeyIdentifier::Subject:
+                subject = keyContent;
+                break;
+            case KeyIdentifier::Body:
+                body += keyContent + (!keyContent.empty() ? "\n" : "");
+                break;
         }
     }
 }
+Email::KeyIdentifier Email::resolveKeyIdentifier(const string &key) {
+    if (key == DATE_KEY_STR) return KeyIdentifier::Date;
+    if (key == FROM_KEY_STR) return KeyIdentifier::From;
+    if (key == TO_KEY_STR) return KeyIdentifier::To;
+    if (key == SUBJECT_KEY_STR) return KeyIdentifier::Subject;
+    if (key == BODY_KEY_STR) return KeyIdentifier::Body;
+
+    throw invalid_argument("Undefined keyIdentifier");
+}
+
 std::string Email::lis_sujet() {
-    
-    return sujet;
+    return subject;
 }
 std::string Email::lis_date() {
     return date;
 }
 std::string Email::lis_source() {
-    return source;
+    return from;
 }
 std::string Email::lis_pour() {
-    return pour;
+    return to;
 }
 std::string Email::lis_corps() {
-    return corps;
+    return body;
 }
