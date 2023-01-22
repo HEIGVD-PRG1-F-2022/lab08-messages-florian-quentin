@@ -8,9 +8,7 @@
 // ================================================================================
 
 #include "../include/main.h"
-
 #include "../include/afficher.h"
-
 #include <filesystem>
 #include <iostream>
 
@@ -24,10 +22,13 @@ void showMenu(const vector<string> &options, const string &sep) {
 template<typename T>
 void showMessagesMenu(const std::string &path) {
     Afficher<T> messages;
+
+    // Read each file in the folder path and add their content to messages.
     for (const auto &entry: filesystem::directory_iterator(path)) {
         messages.ajouter_element(entry.path().string());
     }
 
+    // Menu where you can choose which message to read.
     while (true) {
         string actionInput;
 
@@ -45,7 +46,6 @@ void showMessagesMenu(const std::string &path) {
 
             messages.afficher_element((size_t) selectedIndex - 1);
             return;
-
         } catch (exception const &e) {
             cerr << e.what() << endl;
         }
@@ -83,6 +83,5 @@ void mainMenu() {
 
 int main() {
     mainMenu();
-
     return EXIT_SUCCESS;
 }
