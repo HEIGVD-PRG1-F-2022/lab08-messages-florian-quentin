@@ -8,12 +8,12 @@
 // ================================================================================
 
 #include "../include/afficher.h"
+#include "../include/menu.h"
 #include <iostream>
 
 
 template<typename T>
-Afficher<T>::Afficher() {
-}
+Afficher<T>::Afficher() {}
 
 template<typename T>
 void Afficher<T>::ajouter_element(T el) {
@@ -21,12 +21,12 @@ void Afficher<T>::ajouter_element(T el) {
 }
 template<typename T>
 size_t Afficher<T>::afficher_liste() {
-    for (size_t i = 1; auto const &msg: elements) {
-        cout << i << ") : [" << msg->lis_date() << "] - " << msg->lis_source();
-        ++i;
+
+    for(size_t i = 0; auto &element: elements) {
+        cout << ++i << DEFAULT_MENU_SEPARATOR << "["<< element.lis_date() << "] -" << element.lis_source() << endl;
     }
 
-    return this->elements->size();
+    return elements.size();
 }
 
 //Exception Element hors bounds

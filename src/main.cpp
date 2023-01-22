@@ -12,6 +12,9 @@
 #include "../include/toot.h"
 #include <iostream>
 
+const string EMAIL_DATA_FOLDER_PATH = "../data/emails/";
+const string TOOT_DATA_FOLDER_PATH = "../data/Toots/";
+
 const vector<string> MAIN_MENU_OPTIONS = {
         "Show Toots",
         "Show Emails",
@@ -20,7 +23,7 @@ const vector<string> MAIN_MENU_OPTIONS = {
 const string LEAVE_MSG = "Leave";
 const string ERROR_MENU_ACTION_INPUT = "Sorry this action is not available, please retry";
 
-void showMenu(const vector<string> &options, const string sep = "> ") {
+void showMenu(const vector<string> &options, const string sep = DEFAULT_MENU_SEPARATOR) {
     for (size_t i = 0; const auto &option: options) {
         cout << ++i << sep << option << endl;
     }
