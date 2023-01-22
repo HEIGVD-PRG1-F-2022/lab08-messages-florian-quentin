@@ -8,5 +8,65 @@
 // ================================================================================
 
 #include "../include/toot.h"
+#include "../include/util.h"
+using namespace std;
+
 Toot::Toot() {
+}
+
+Toot::Toot(const std::string &file) {
+    vector<std::string> lines;
+
+    string line;
+    ifstream infile(file);
+
+    string keyIdentifier, keyContent;
+
+    bool isBodyFlag = false;
+    while (getline(infile, line)) {
+        vector<string> parts = split(line, ':', 2);
+
+        if (parts.size() == 2 && !isBodyFlag) {
+            keyIdentifier = parts.at(0);
+            keyContent = parts.at(1);
+        } else {
+            keyContent = parts.at(0);
+        }
+
+        switch (resolveKeyIdentifier(keyIdentifier)) {
+            case KeyIdentifier::Date:
+                date = keyContent;
+                break;
+            case KeyIdentifier::From:
+                from = keyContent;
+                break;
+            case KeyIdentifier::Body:
+                body += keyContent + (!keyContent.empty() ? "\n" : "");
+                isBodyFlag = true;
+                break;
+        }
+    }
+}
+Toot::KeyIdentifier Toot::resolveKeyIdentifier(const string &key) {
+    if (key == DATE_KEY_STR) return KeyIdentifier::Date;
+    if (key == FROM_KEY_STR) return KeyIdentifier::From;
+    if (key == BODY_KEY_STR) return KeyIdentifier::Body;
+
+    throw invalid_argument("Undefined keyIdentifier");
+}
+
+std::string Toot::lis_sujet() {
+    return subject;
+}
+std::string Toot::lis_date() {
+    return date;
+}
+std::string Toot::lis_source() {
+    return from;
+}
+std::string Toot::lis_pour() {
+    return to;
+}
+std::string Toot::lis_corps() {
+    return body;
 }

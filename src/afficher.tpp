@@ -19,6 +19,7 @@ template<typename T>
 void Afficher<T>::ajouter_element(T el) {
     elements.push_back(el);
 }
+
 template<typename T>
 size_t Afficher<T>::afficher_liste() {
 
@@ -29,20 +30,16 @@ size_t Afficher<T>::afficher_liste() {
     return elements.size();
 }
 
-//Exception Element hors bounds
-//Dans toot et Email Excpetion si champs manquant : lis_*
-//Dans toot et Email Excpetion si constructeur-> fichier invalide
-//
 template<typename T>
-void Afficher<T>::afficher_element(size_t el) {
-    if(el > elements.size()){
+void Afficher<T>::afficher_element(size_t index) {
+    if(index > elements.size()){
         cout << "index trop grand, maximum: " << elements.size() <<endl;
         return;
     }
-    T targetElement = elements.at(el);
-    cout << "sujet: " << targetElement->lis_sujet() << endl;
-    cout << "date: "<< targetElement->lis_date() << endl;
-    cout << "source: " << targetElement->lis_source() << endl;
-    cout << "pour: " << targetElement->lis_pour() << endl;
-    cout << "corps: " << targetElement->lis_corps() << endl;
+    T targetElement = elements.at(index);
+    cout << "sujet: " << targetElement.lis_sujet() << endl;
+    cout << "date: "<< targetElement.lis_date() << endl;
+    cout << "source: " << targetElement.lis_source() << endl;
+    cout << "pour: " << targetElement.lis_pour() << endl;
+    cout << "corps: " << targetElement.lis_corps() << endl;
 }

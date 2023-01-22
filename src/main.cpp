@@ -11,6 +11,7 @@
 #include "../include/email.h"
 #include "../include/toot.h"
 #include <iostream>
+#include <filesystem>
 
 const string EMAIL_DATA_FOLDER_PATH = "../data/emails/";
 const string TOOT_DATA_FOLDER_PATH = "../data/Toots/";
@@ -30,7 +31,39 @@ void showMenu(const vector<string> &options, const string sep = DEFAULT_MENU_SEP
     cout << 0 << sep << LEAVE_MSG << endl;
 }
 
+template<typename T>
+void showMessagesMenu(const std::string& path)
+{
+    Afficher<T> messages;
+    for (const auto & entry : std::filesystem::directory_iterator(path)){
+        messages.ajouter_element(entry.path().string());
+    }
+
+    while (true) {
+        string actionInput;
+        messages.afficher_liste();
+        cout << 0 << DEFAULT_MENU_SEPARATOR << LEAVE_MSG << endl;
+        getline(cin, actionInput);
+
+        try {
+            int selectedIndex = stoi(actionInput);
+            switch (selectedIndex) {
+                case 0: {
+                    return;// Exit the menu
+                }
+                default: {
+                    if(selectedIndex < 0) throw invalid_argument(ERROR_MENU_ACTION_INPUT);
+                    messages.afficher_element((size_t)selectedIndex-1);
+                }
+            }
+        }catch (exception const &e) {
+            cerr << e.what() << endl;
+        }
+    }
+}
+
 void mainMenu() {
+
     while (true) {
         string actionInput;
         showMenu(MAIN_MENU_OPTIONS);
@@ -44,10 +77,12 @@ void mainMenu() {
                 }
                 case 1: {
                     // TODO: Show Toots
+                    showMessagesMenu<Toot>(TOOT_DATA_FOLDER_PATH);
                     break;
                 }
                 case 2: {
                     // TODO: Show Emails
+                    showMessagesMenu<Email>(EMAIL_DATA_FOLDER_PATH);
                     break;
                 }
                 default:
@@ -60,10 +95,6 @@ void mainMenu() {
 }
 
 int main() {
-    Afficher<Email> emails;
-    Email a("../data/emails/email1.txt");
-    emails.ajouter_element(a);
-
     mainMenu();
 
     return 0;

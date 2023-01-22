@@ -19,10 +19,11 @@ Email::Email(const std::string &file) {
 
     string keyIdentifier, keyContent;
 
+    bool isBodyFlag = false;
     while (getline(infile, line)) {
         vector<string> parts = split(line, ':', 2);
 
-        if (parts.size() == 2) {
+        if (parts.size() == 2 && !isBodyFlag) {
             keyIdentifier = parts.at(0);
             keyContent = parts.at(1);
         } else {
@@ -44,6 +45,7 @@ Email::Email(const std::string &file) {
                 break;
             case KeyIdentifier::Body:
                 body += keyContent + (!keyContent.empty() ? "\n" : "");
+                isBodyFlag = true;
                 break;
         }
     }

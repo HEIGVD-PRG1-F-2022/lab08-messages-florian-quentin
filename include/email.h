@@ -14,14 +14,16 @@
 #include <string>
 #include <vector>
 
-const std::string DATE_KEY_STR = "date";
-const std::string FROM_KEY_STR = "from";
-const std::string TO_KEY_STR = "to";
-const std::string SUBJECT_KEY_STR = "subject";
-const std::string BODY_KEY_STR = "body";
+
 
 class Email {
 private:
+    const std::string DATE_KEY_STR = "date";
+    const std::string FROM_KEY_STR = "from";
+    const std::string TO_KEY_STR = "to";
+    const std::string SUBJECT_KEY_STR = "subject";
+    const std::string BODY_KEY_STR = "body";
+
     std::string date, from, to, subject, body;
 
     enum class KeyIdentifier {
@@ -32,7 +34,7 @@ private:
         Body
     };
 
-    static KeyIdentifier resolveKeyIdentifier(const std::string &key);
+    KeyIdentifier resolveKeyIdentifier(const std::string &key);
 
 public:
     Email(const std::string &file);
