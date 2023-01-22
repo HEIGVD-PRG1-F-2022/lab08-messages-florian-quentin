@@ -11,7 +11,6 @@
 
 using namespace std;
 
-
 /**
  * Source : https://github.com/HEIGVD-PRG1-F-2022/librobots/blob/5d2ea94352308cf7372f215e74eb9eed3aaeb215/src/Message.cpp
  */

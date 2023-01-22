@@ -9,28 +9,39 @@
 #ifndef INC_08_MESSAGES_TOOT_H
 #define INC_08_MESSAGES_TOOT_H
 
-#include <fstream>
-#include <iostream>
+#include "config.h"
+
 #include <string>
-#include <vector>
 
-class Toot
-{
+class Toot {
 private:
-    const std::string DATE_KEY_STR = "date";
-    const std::string FROM_KEY_STR = "from";
-    const std::string BODY_KEY_STR = "body";
+    std::string subject, date, from, to, body;
 
-    std::string subject,date,from,to,body;
+    /**
+     * Enumeration of KeyIdentifier available **only** in Toot
+     * This is here because class need a specialized resolver.
+     * We can't generalize it because of the potential change into the storage structure.
+     */
     enum class KeyIdentifier {
         Date = 0,
         From,
         Body
     };
+
+    /**
+     * Convert string to a specific enum of KeyIdentifier
+     * @param key string keyString to convert to an enum
+     * @return KeyIdentifier matching keyString
+     */
     KeyIdentifier resolveKeyIdentifier(const std::string &key);
+
 public:
-    Toot();
-    Toot(const std::string &file);
+    /**
+     * Read filePath and import data into the class
+     * @param filePath string
+     */
+    Toot(const std::string &filePath);
+
     std::string lis_sujet();
     std::string lis_date();
     std::string lis_source();

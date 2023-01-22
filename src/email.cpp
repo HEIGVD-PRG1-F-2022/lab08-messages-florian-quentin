@@ -9,20 +9,23 @@
 
 #include "../include/email.h"
 #include "../include/util.h"
+
 using namespace std;
 
-Email::Email(const std::string &file) {
-    std::vector<std::string> lines;
+Email::Email(const string &filePath) {
+    vector<string> lines;
 
-    std::string line;
-    std::ifstream infile(file);
+    string line;
+    ifstream infile(filePath);
 
     string keyIdentifier, keyContent;
 
     bool isBodyFlag = false;
+
     while (getline(infile, line)) {
         vector<string> parts = split(line, ':', 2);
 
+        // Check if is body content
         if (parts.size() == 2 && !isBodyFlag) {
             keyIdentifier = parts.at(0);
             keyContent = parts.at(1);
@@ -30,6 +33,7 @@ Email::Email(const std::string &file) {
             keyContent = parts.at(0);
         }
 
+        // Store content into class according his keyIdentifier
         switch (resolveKeyIdentifier(keyIdentifier)) {
             case KeyIdentifier::Date:
                 date = keyContent;
@@ -60,18 +64,18 @@ Email::KeyIdentifier Email::resolveKeyIdentifier(const string &key) {
     throw invalid_argument("Undefined keyIdentifier");
 }
 
-std::string Email::lis_sujet() {
+string Email::lis_sujet() {
     return subject;
 }
-std::string Email::lis_date() {
+string Email::lis_date() {
     return date;
 }
-std::string Email::lis_source() {
+string Email::lis_source() {
     return from;
 }
-std::string Email::lis_pour() {
+string Email::lis_pour() {
     return to;
 }
-std::string Email::lis_corps() {
+string Email::lis_corps() {
     return body;
 }

@@ -10,26 +10,35 @@
 #ifndef INC_08_MESSAGES_AFFICHER_H
 #define INC_08_MESSAGES_AFFICHER_H
 
-
-#include "email.h"
-#include "toot.h"
 #include <string>
-#include <type_traits>
-#include <typeinfo>
 #include <vector>
 
-using namespace std;
-
+/**
+ * Generic container for T type messages
+ * @tparam T
+ */
 template<typename T>
-class Afficher
-{
+class Afficher {
+private:
     std::vector<T> elements;
 
 public:
-    Afficher();
-
+    /**
+     * Add a single element
+     * @param el T elements
+     */
     void ajouter_element(T el);
+
+    /**
+     * Display all elements with indexes, date and source
+     * @return size_t number of elements
+     */
     size_t afficher_liste();
+
+    /**
+     * Display selected element information
+     * @param el size_t index of element
+     */
     void afficher_element(size_t el);
 };
 

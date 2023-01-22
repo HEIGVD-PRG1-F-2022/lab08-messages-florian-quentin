@@ -15,12 +15,6 @@
 #include <string>
 #include <vector>
 
-const std::string EMAIL_DATA_FOLDER_PATH = "../data/emails/";
-const std::string TOOT_DATA_FOLDER_PATH = "../data/Toots/";
-
-const std::string LEAVE_MSG = "Leave";
-const std::string ERROR_MENU_ACTION_INPUT = "Sorry this action is not available, please retry";
-
 const std::vector<std::string> MAIN_MENU_OPTIONS = {
         "Show Toots",
         "Show Emails",
