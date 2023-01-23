@@ -9,7 +9,6 @@
 
 #include "../include/main.h"
 #include "../include/afficher.h"
-#include "../include/config.h"
 #include "../include/email.h"
 #include "../include/toot.h"
 #include "../include/tweet.h"

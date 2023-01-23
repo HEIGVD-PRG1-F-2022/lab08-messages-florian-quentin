@@ -32,6 +32,9 @@ const std::string ERROR_MENU_ACTION_INPUT = "Sorry this action is not available,
 const std::string ERROR_INDEX_OUT_OF_BOUND = "Index out of bound, Maximum ";
 
 const std::string ERROR_UNDEFINED_KEYIDENTIFIER = "Undefined Key Identifier";
-const std::string ERROR_INVALID_FORMAT_DATE = "Invalid Date Format";
+const std::string ERROR_INVALID_DATE_FORMAT = "Invalid Date Format";
+
+//stream format
+const std::string DATE_FORMAT = " %Y-%m-%d";
 
 #endif//INC_08_MESSAGES_CONFIG_H

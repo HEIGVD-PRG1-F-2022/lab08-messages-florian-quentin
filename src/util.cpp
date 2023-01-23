@@ -8,9 +8,11 @@
 // ================================================================================
 #include "../include/config.h"
 #include "../include/util.h"
+
 #include <ctime>
 #include <iomanip>
 #include <iostream>
+
 using namespace std;
 
 /**
@@ -34,10 +36,9 @@ string& checkDateTime(string& timeStr) {
         tm t = {};
         istringstream date(timeStr);
         date.imbue(locale(""));
-        date >> get_time(&t, " %Y-%m-%d");
-        get_time(&t, " %Y-%m-%d");
+        date >> get_time(&t, DATE_FORMAT.c_str());
         if (date.fail()){
-            throw invalid_argument(ERROR_INVALID_FORMAT_DATE);
+            throw invalid_argument(ERROR_INVALID_DATE_FORMAT);
         }
     return timeStr;
 }

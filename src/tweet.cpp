@@ -14,7 +14,7 @@
 
 using namespace std;
 
-Tweet::Tweet(const std::string &filePath) {
+Tweet::Tweet(const string &filePath) {
     vector<std::string> lines;
 
     string line;
@@ -50,7 +50,7 @@ Tweet::Tweet(const std::string &filePath) {
     }
 }
 
-Tweet::KeyIdentifier Tweet::resolveKeyIdentifier(const std::string &key) {
+Tweet::KeyIdentifier Tweet::resolveKeyIdentifier(const string &key) {
     if (key == DATE_KEY_STR) return KeyIdentifier::Date;
     if (key == FROM_KEY_STR) return KeyIdentifier::From;
     if (key == BODY_KEY_STR) return KeyIdentifier::Body;

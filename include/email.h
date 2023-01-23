@@ -11,8 +11,7 @@
 #define INC_08_MESSAGES_EMAIL_H
 
 #include "config.h"
-#include <fstream>
-#include <iostream>
+
 #include <string>
 #include <vector>
 

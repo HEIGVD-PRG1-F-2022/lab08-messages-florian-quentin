@@ -9,6 +9,10 @@
 
 #include "../include/email.h"
 #include "../include/util.h"
+
+#include <fstream>
+#include <iostream>
+
 using namespace std;
 
 Email::Email(const string &filePath) {

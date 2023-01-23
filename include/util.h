@@ -20,7 +20,7 @@
  * @param max_sep size_t maximum number of parts wanted, by default 0 = no limit
  * @return vector<string> list of all split parts
  */
-std::vector<std::string> split(const std::string &str, const char &sep = ':', const size_t max_sep = 0);
+std::vector<std::string> split(const std::string &str, const char &sep = ':', size_t max_sep = 0);
 
 std::string& checkDateTime(std::string& timeStr);
 #endif//INC_08_MESSAGES_UTIL_H
