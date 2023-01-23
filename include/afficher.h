@@ -1,5 +1,5 @@
 // ================================================================================
-// File : Afficher.h
+// File : afficher.h
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz

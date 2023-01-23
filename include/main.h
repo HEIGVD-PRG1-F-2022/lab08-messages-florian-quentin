@@ -18,6 +18,7 @@
 const std::vector<std::string> MAIN_MENU_OPTIONS = {
         "Show Toots",
         "Show Emails",
+        "Show Tweets",
 };
 
 /**

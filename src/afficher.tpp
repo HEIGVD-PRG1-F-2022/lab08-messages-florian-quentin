@@ -1,5 +1,5 @@
 // ================================================================================
-// File : Afficher.tpp
+// File : afficher.tpp
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz

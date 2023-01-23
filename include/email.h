@@ -1,5 +1,5 @@
 // ================================================================================
-// File : Email.h
+// File : email.h
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz

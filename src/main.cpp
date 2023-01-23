@@ -12,6 +12,7 @@
 #include "../include/config.h"
 #include "../include/email.h"
 #include "../include/toot.h"
+#include "../include/tweet.h"
 
 #include <filesystem>
 #include <iostream>
@@ -74,6 +75,10 @@ void mainMenu() {
                 }
                 case 2: {
                     showMessagesMenu<Email>(EMAIL_DATA_FOLDER_PATH);
+                    break;
+                }
+                case 3: {
+                    showMessagesMenu<Tweet>(TWEET_DATA_FOLDER_PATH);
                     break;
                 }
                 default:

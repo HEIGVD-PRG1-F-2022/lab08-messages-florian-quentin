@@ -1,5 +1,5 @@
 // ================================================================================
-// File : Util.h
+// File : util.h
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz

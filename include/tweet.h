@@ -1,25 +1,23 @@
 // ================================================================================
-// File : toot.h
+// File : tweet.h
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz
 // - Quentin Aellen
-// File created by Florian Duruz
+// File created by Quentin Aellen
 // ================================================================================
 
-#ifndef INC_08_MESSAGES_TOOT_H
-#define INC_08_MESSAGES_TOOT_H
+#ifndef INC_08_MESSAGES_TWEET_H
+#define INC_08_MESSAGES_TWEET_H
 
 #include "config.h"
 
-#include <string>
-
-class Toot {
+class Tweet {
 private:
     std::string subject, date, from, to, body;
 
     /**
-     * Enumeration of KeyIdentifier available **only** in Toot
+     * Enumeration of KeyIdentifier available **only** in Tweet
      * This is here because class need a specialized resolver.
      * We can't generalize it because of the potential change into the storage structure.
      */
@@ -41,7 +39,7 @@ public:
      * Read filePath and import data into the class
      * @param filePath string
      */
-    Toot(const std::string &filePath);
+    Tweet(const std::string &filePath);
 
     std::string lis_sujet();
     std::string lis_date();
@@ -50,5 +48,4 @@ public:
     std::string lis_corps();
 };
 
-
-#endif//INC_08_MESSAGES_TOOT_H
+#endif//INC_08_MESSAGES_TWEET_H

@@ -1,5 +1,5 @@
 // ================================================================================
-// File : Toot.cpp
+// File : toot.cpp
 // Project name : LABO - 08-Messages
 // Project members :
 // - Florian Duruz
@@ -14,8 +14,8 @@
 
 using namespace std;
 
-Toot::Toot(const std::string &filePath) {
-    vector<std::string> lines;
+Toot::Toot(const string &filePath) {
+    vector<string> lines;
 
     string line;
     ifstream infile(filePath);
@@ -57,18 +57,18 @@ Toot::KeyIdentifier Toot::resolveKeyIdentifier(const string &key) {
     throw invalid_argument("Undefined keyIdentifier");
 }
 
-std::string Toot::lis_sujet() {
+string Toot::lis_sujet() {
     return subject;
 }
-std::string Toot::lis_date() {
+string Toot::lis_date() {
     return date;
 }
-std::string Toot::lis_source() {
+string Toot::lis_source() {
     return from;
 }
-std::string Toot::lis_pour() {
+string Toot::lis_pour() {
     return to;
 }
-std::string Toot::lis_corps() {
+string Toot::lis_corps() {
     return body;
 }

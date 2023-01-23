@@ -22,6 +22,7 @@ const std::string BODY_KEY_STR = "body";
 // Data folder path
 const std::string EMAIL_DATA_FOLDER_PATH = "../data/emails/";
 const std::string TOOT_DATA_FOLDER_PATH = "../data/Toots/";
+const std::string TWEET_DATA_FOLDER_PATH = "../data/Tweets/";
 
 // Custom display for exit
 const std::string LEAVE_MSG = "Leave";
