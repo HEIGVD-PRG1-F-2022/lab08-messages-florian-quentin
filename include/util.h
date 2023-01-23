@@ -22,5 +22,10 @@
  */
 std::vector<std::string> split(const std::string &str, const char &sep = ':', size_t max_sep = 0);
 
+/**
+ * Check date format year-month-day
+ * @param timeStr string& date in string format
+ * @return string& date in string format
+ */
 std::string& checkDateTime(std::string& timeStr);
 #endif//INC_08_MESSAGES_UTIL_H
