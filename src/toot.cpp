@@ -37,7 +37,7 @@ Toot::Toot(const string &filePath) {
         // Store content into class according his keyIdentifier
         switch (resolveKeyIdentifier(keyIdentifier)) {
             case KeyIdentifier::Date:
-                date = keyContent;
+                date = checkDateTime(keyContent);
                 break;
             case KeyIdentifier::From:
                 from = keyContent;
@@ -54,7 +54,7 @@ Toot::KeyIdentifier Toot::resolveKeyIdentifier(const string &key) {
     if (key == FROM_KEY_STR) return KeyIdentifier::From;
     if (key == BODY_KEY_STR) return KeyIdentifier::Body;
 
-    throw invalid_argument("Undefined keyIdentifier");
+    throw invalid_argument(ERROR_UNDEFINED_KEYIDENTIFIER);
 }
 
 string Toot::lis_sujet() {

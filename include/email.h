@@ -19,7 +19,6 @@
 class Email {
 private:
     std::string date, from, to, subject, body;
-
     /**
      * Enumeration of KeyIdentifier available **only** in Email
      * This is here because class need a specialized resolver.

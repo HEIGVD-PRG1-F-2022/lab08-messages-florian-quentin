@@ -6,9 +6,11 @@
 // - Quentin Aellen
 // File created by Quentin Aellen
 // ================================================================================
-
+#include "../include/config.h"
 #include "../include/util.h"
-
+#include <ctime>
+#include <iomanip>
+#include <iostream>
 using namespace std;
 
 /**
@@ -27,4 +29,15 @@ vector<string> split(const string &str, const char &sep, const size_t max_sep) {
 
     parts.push_back(str.substr(lastIndexCursor));
     return parts;
+}
+string& checkDateTime(string& timeStr) {
+        tm t = {};
+        istringstream date(timeStr);
+        date.imbue(locale(""));
+        date >> get_time(&t, " %Y-%m-%d");
+        get_time(&t, " %Y-%m-%d");
+        if (date.fail()){
+            throw invalid_argument(ERROR_INVALID_FORMAT_DATE);
+        }
+    return timeStr;
 }

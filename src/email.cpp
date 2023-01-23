@@ -9,12 +9,10 @@
 
 #include "../include/email.h"
 #include "../include/util.h"
-
 using namespace std;
 
 Email::Email(const string &filePath) {
     vector<string> lines;
-
     string line;
     ifstream infile(filePath);
 
@@ -36,7 +34,7 @@ Email::Email(const string &filePath) {
         // Store content into class according his keyIdentifier
         switch (resolveKeyIdentifier(keyIdentifier)) {
             case KeyIdentifier::Date:
-                date = keyContent;
+                date = checkDateTime(keyContent);
                 break;
             case KeyIdentifier::From:
                 from = keyContent;
@@ -61,7 +59,7 @@ Email::KeyIdentifier Email::resolveKeyIdentifier(const string &key) {
     if (key == SUBJECT_KEY_STR) return KeyIdentifier::Subject;
     if (key == BODY_KEY_STR) return KeyIdentifier::Body;
 
-    throw invalid_argument("Undefined keyIdentifier");
+    throw invalid_argument(ERROR_UNDEFINED_KEYIDENTIFIER);
 }
 
 string Email::lis_sujet() {

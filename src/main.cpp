@@ -51,7 +51,7 @@ void showMessagesMenu(const std::string &path) {
 
             messages.afficher_element((size_t) selectedIndex - 1);
             return;
-        } catch (exception const &e) {
+        } catch (const exception &e) {
             cerr << e.what() << endl;
         }
     }

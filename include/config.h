@@ -29,7 +29,9 @@ const std::string LEAVE_MSG = "Leave";
 
 // Error messages
 const std::string ERROR_MENU_ACTION_INPUT = "Sorry this action is not available, please retry";
-const std::string ERROR_INDEX_OUT_OF_BOUND = "Index out of bound, max ";
+const std::string ERROR_INDEX_OUT_OF_BOUND = "Index out of bound, Maximum ";
 
+const std::string ERROR_UNDEFINED_KEYIDENTIFIER = "Undefined Key Identifier";
+const std::string ERROR_INVALID_FORMAT_DATE = "Invalid Date Format";
 
 #endif//INC_08_MESSAGES_CONFIG_H

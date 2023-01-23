@@ -22,4 +22,5 @@
  */
 std::vector<std::string> split(const std::string &str, const char &sep = ':', const size_t max_sep = 0);
 
+std::string& checkDateTime(std::string& timeStr);
 #endif//INC_08_MESSAGES_UTIL_H
